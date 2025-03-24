@@ -39,24 +39,23 @@ bash run_all.sh
 The API gateway runs on **port 8000** and routes requests to respective agents.
 
 ### 4. Example API Calls
-- 1. JD (Job Description) Generator:
+- JD (Job Description) Generator:
   ```sh
   curl -X POST "http://localhost:8001/generate_jd" -H "Content-Type: application/json" -d '{
   "job_title": "Data Scientist",
   "skills": ["Python", "Data Science", "Machine Learning", "Deep Learning", "NLP"],
   "experience_level": "Mid level"}'
   ```
-- 2. ResumeRanker:
+- ResumeRanker:
   ```sh
   curl -X POST "http://localhost:8002/rank_resumes" -H "Content-Type: application/json" -d '{
   "job_description": "Looking for a Data Scientist with Python and ML experience.",
   "resumes": [
     "John Doe: Experience in Python, ML, and DL.",
     "Jane Smith: Skilled in Java and SQL.",
-    "William Richards: Experienced in talent acuqisition and learning and development."
-  ]}'
+    "William Richards: Experienced in talent acuqisition and learning and development."]}'
   ```
-  - 3. Email Automation:
+- Email Automation:
   ```sh
   curl -X POST "http://localhost:8000/send_email" \
      -H "Content-Type: application/json" \
@@ -66,7 +65,7 @@ The API gateway runs on **port 8000** and routes requests to respective agents.
            "time": "14:00"
          }'
   ```
-  - 4. InterviewScheduler:
+- InterviewScheduler:
   ```sh
   curl -X POST "http://localhost:8004/schedule_interview" \
      -H "Content-Type: application/json" \
@@ -77,8 +76,8 @@ The API gateway runs on **port 8000** and routes requests to respective agents.
            "interviewer_email": "hr@example.com"
          }'
   ```
-  - 5. InterviewAgent:
-  Initialise interview -
+- InterviewAgent:
+    - Initialise interview -
   ```sh
   curl -X POST "http://localhost:8005/conduct_interview" \
      -H "Content-Type: application/json" \
@@ -87,7 +86,7 @@ The API gateway runs on **port 8000** and routes requests to respective agents.
            "candidate_response": ""
          }'
   ```
-  Follow-up question -
+    - Follow-up question -
   ```sh
   curl -X POST "http://localhost:8005/conduct_interview" \
      -H "Content-Type: application/json" \
@@ -96,7 +95,7 @@ The API gateway runs on **port 8000** and routes requests to respective agents.
            "candidate_response": "I have 5 years of experience in data science, focusing on NLP and GenAI."
          }'
   ```
-  - 6. HireRecommendationAgent:
+- HireRecommendationAgent:
   ```sh
   curl -X POST "http://localhost:8006/hire_recommendation" \
      -H "Content-Type: application/json" \
@@ -105,7 +104,7 @@ The API gateway runs on **port 8000** and routes requests to respective agents.
            "interview_transcript": "Interviewer: Can you tell me about your experience with machine learning?\nCandidate: I have 5 years of experience in ML, specializing in NLP and computer vision.\nInterviewer: Can you discuss a challenging project you worked on?\nCandidate: Yes, I worked on an AI-driven chatbot that required extensive fine-tuning of LLMs.\nInterviewer: How do you handle model performance issues?\nCandidate: I use hyperparameter tuning, feature engineering, and dataset augmentation."
          }'
   ```
-  - 7. SentimentAnalyzer:
+- SentimentAnalyzer:
   ```sh
   curl -X POST "http://localhost:8000/analyze_sentiment" \
      -H "Content-Type: application/json" \
